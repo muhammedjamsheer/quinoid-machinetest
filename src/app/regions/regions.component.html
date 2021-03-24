@@ -1,0 +1,27 @@
+<ng-container *ngIf="regionList.length>0" >
+  <table class="table table-bordered regiiontable">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">Sl N0.</th>
+        <th scope="col">Flag</th>
+        <th scope="col">Country Name</th>
+        <th scope="col">Capital</th>
+        <th scope="col">Area</th>
+        <th scope="col">Languages</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of regionList;let i=index">
+        <td scope="row">{{i+1}}</td>
+        <td><img style="width: 45px;height: 35px;" src="{{data.flag}}"></td>
+        <td>{{data.name}}</td>
+        <td>{{data.capital}}</td>
+        <td>{{data.area}}</td>
+        <td>
+          <ul *ngFor="let lang of data.languages">
+            <li>{{lang.name}}</li>
+          </ul>
+      </tr>
+    </tbody>
+  </table>
+</ng-container>
